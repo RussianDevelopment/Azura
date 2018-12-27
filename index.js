@@ -51,11 +51,15 @@ client.on("message", async message => {
 
 client.on("message", async message => {
   if(message.content === "z.res") {
-    if(!message.author.id === "339462715917729792") return message.channel.send("Параметр к просмотру запрещен");
+    if(!message.author.id === "339462715917729792") {
+    message.channel.send("Доступ запрещен.");
+      } else {
     let used = process.memoryUsage().rss / 1024 / 1024;
     message.channel.send(`Приблизительное количество выделенных ресурсов составляет ${Math.round(used * 100) / 100} МБ`);
   }
+ }
 })
+
 
 //
 //
