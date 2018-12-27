@@ -1,0 +1,22 @@
+{
+  "name": "azura",
+  "version": "0.1.1",
+  "description": "The bot who controled the server of spam and reactrole and more more more..",
+  "main": "app.js",
+  "scripts": {
+    "test": "z.help"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "abc"
+  ],
+  "author": "Ripple feat. Fluiser",
+  "license": "",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "fs": "0.0.1-security"
+  }
+}
