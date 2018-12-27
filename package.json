@@ -2,7 +2,7 @@
   "name": "azura",
   "version": "0.1.1",
   "description": "The bot who controled the server of spam and reactrole and more more more..",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "z.help"
   },
