@@ -28,7 +28,7 @@ client.on("ready", async () => {
 
 client.on("message", async message => {
   if(message.content === "z.help") {
-   if(message.type === "dm") return();
+   if(message.type === "dm") return;
     message.reply("Check your DM.")
     message.author.send("1");
   };
