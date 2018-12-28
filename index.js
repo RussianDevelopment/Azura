@@ -28,7 +28,7 @@ client.on("ready", async () => {
 
 client.on("message", async message => {
   if(message.content === "z.help") {
-   if(message.type === "dm") return;
+   if(message.type === "dm") return();
     message.reply("Check your DM.")
     message.author.send("1");
   };
@@ -51,7 +51,7 @@ client.on("message", async message => {
 
 client.on("message", async message => {
   if(message.content === "z.res") {
-    if(message.author.id === "339462715917729792") {
+    if(!message.author.id === "339462715917729792") {
     message.channel.send("Доступ запрещен.");
       } else {
     let used = process.memoryUsage().rss / 1024 / 1024;
