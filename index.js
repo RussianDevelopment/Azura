@@ -27,18 +27,18 @@ client.on("ready", async () => {
 
 
 client.on("message", async message => {
-  if(message.type === "dm") return;
   if(message.content === "z.help") {
+   if(message.type === "dm") return;
     message.reply("Check your DM.")
     message.author.send("1");
   };
 });
 
 client.on("message", async message => {
-  if(message.type === "dm") return;
   let verify = message.guild.roles.find(role => role.name === "Verified");
   let member = message.member;
   if(message.content === "z.verify") {
+   if(message.type === "dm") return;
       if(message.member.roles.has(verify.id)) {
         message.channel.send(`Вы уже проходили проверку, ${message.author.username}: роль присутствует.`)
           } else {
@@ -51,7 +51,7 @@ client.on("message", async message => {
 
 client.on("message", async message => {
   if(message.content === "z.res") {
-    if(!message.author.id === "339462715917729792") {
+    if(message.author.id === "339462715917729792") {
     message.channel.send("Доступ запрещен.");
       } else {
     let used = process.memoryUsage().rss / 1024 / 1024;
