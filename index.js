@@ -30,7 +30,11 @@ client.on("message", async message => {
   if(message.content === "z.help") {
    if(message.type === "dm") return;
     message.reply("Check your DM.")
-    message.author.send("1");
+    const embed = new Discord.RichEmbed()
+    .setTitle("Help")
+    .setColor("#00FF00")
+    .setDescription("z.verify - пройти проверку на сервере\n\nz.res - ?\n\nz.take - список ролей, которые можно взять\n\nz.take (имя роли) - получить роль");
+    message.author.send(embed);
   };
 });
 
