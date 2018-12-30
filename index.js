@@ -39,7 +39,7 @@ client.on("message", async message => {
   let member = message.member;
   if(message.content === "z.verify") {
    if(message.type === "dm") return;
-      if(message.member.roles.has(verify.id)) {
+      if(message.member.roles.has(verify.id).catch(console.error)) {
         message.channel.send(`Вы уже проходили проверку, ${message.author.username}: роль присутствует.`)
           } else {
             member.addRole(verify).catch(console.error);
@@ -58,6 +58,13 @@ client.on("message", async message => {
     message.channel.send("Доступ запрещен.")
   };
  };
+});
+
+client.on("message", async message => {
+  if(message.content.includes("discord.gg")) {
+    message.delete(500);
+    message.author.send(`${message.author.username}, реклама запрещена.`)
+  };
 });
 
 
