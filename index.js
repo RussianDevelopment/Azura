@@ -71,6 +71,13 @@ client.on("message", async message => {
   };
 });
 
+client.on("message", async message => {
+  if(message.content.includes("discordapp.com")) {
+    message.delete(500);
+    message.author.send(`${message.author.username}, реклама запрещена.`)
+  };
+});
+
 
 //
 //
