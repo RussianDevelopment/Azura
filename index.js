@@ -43,7 +43,7 @@ client.on("message", async message => {
   let member = message.member;
   if(message.content === "z.verify") {
    if(message.type === "dm") return;
-      if(message.member.roles.has(verify.id)) {
+      if(message.member.roles.has(verify.id).catch(console.error)) {
         message.channel.send(`Вы уже проходили проверку, ${message.author.username}: роль присутствует.`)
           } else {
             member.addRole(verify).catch(console.error);
@@ -66,16 +66,17 @@ client.on("message", async message => {
 
 client.on("message", async message => {
   if(message.content.includes("discord.gg")) {
-    message.delete(500);
+    let owner = client.users.get("339462715917729792");
+    message.delete(500).then(owner.send(`Сообщение от: ${message.author.tag} ${message.author.id}\n\nСодержание: Реклама`))
     message.author.send(`${message.author.username}, реклама запрещена.`)
   };
-});
-
-client.on("message", async message => {
-  if(message.content.includes("discordapp.com")) {
-    message.delete(500);
-    message.author.send(`${message.author.username}, реклама запрещена.`)
+  if(message.content.edit){
+    if(message.content.includes("discord.gg")) {
+      let owner = client.users.get("339462715917729792");
+      message.delete(500).then(owner.send(`Сообщение от: ${message.author.tag} ${message.author.id}\n\nСодержание: Реклама`))
+      message.author.send(`${message.author.username}, реклама запрещена.`)
   };
+ };
 });
 
 
