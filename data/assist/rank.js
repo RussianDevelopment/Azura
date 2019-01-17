@@ -6,7 +6,7 @@ let xp = require('../jsons/xp.json')
 const config = require('../config.js');
 
 var modules = config.modules;
-
+var prefix = "z.";
 var login = config.login;
 
 client.on("ready", async () => {
