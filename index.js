@@ -16,7 +16,7 @@ var login = config.login;
 client.on("ready", async () => {
   console.log(`AZURA\n\nBot developers: Ripple & Fluiser\n\nServers: ${client.guilds.size}`);
   console.log(`Working.`);
-  client.user.setActivity("activity of 2 SHARDS", {type: "WATCHING"});
+  client.user.setActivity("на булочки одноклассниц", {type: "WATCHING"});
 });
 
 //
@@ -39,7 +39,7 @@ client.on("message", async message => {
 });
 
 client.on("message", async message => {
-  let verify = message.guild.roles.find(role => role.name === "Verified");
+  let verify = message.guild.roles.find(role => role.name === "пользователь");
   let member = message.member;
   if(message.content === "z.verify") {
    if(message.type === "dm") return;
