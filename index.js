@@ -41,7 +41,7 @@ client.on("message", async message => {
 client.on("message", async message => {
   let verify = message.guild.roles.find(role => role.name === "пользователь");
   let member = message.member;
-  if(message.content === "z.js") {
+  if(message.content === "z.verify") {
    if(message.type === "dm") return;
       if(message.member.roles.has(verify.id)) {
         message.channel.send(`Вы уже проходили проверку, ${message.author.username}: роль присутствует.`)
@@ -56,7 +56,7 @@ client.on("message", async message => {
 client.on("message", async message => {
   let dscrd = message.guild.roles.find(role => role.name === "discord.js");
   let member = message.member;
-  if(message.content === "z.verify") {
+  if(message.content === "z.js") {
    if(message.type === "dm") return;
       if(message.member.roles.has(dscrd.id)) {
         message.channel.send(`Вы уже проходили проверку, ${message.author.username}: роль присутствует.`)
