@@ -54,6 +54,21 @@ client.on("message", async message => {
 });
 
 client.on("message", async message => {
+  let dscrd = message.guild.roles.find(role => role.name === "discord.js");
+  let member = message.member;
+  if(message.content === "z.verify") {
+   if(message.type === "dm") return;
+      if(message.member.roles.has(dscrd.id)) {
+        message.channel.send(`Вы уже проходили проверку, ${message.author.username}: роль присутствует.`)
+          } else {
+            member.addRole(dscrd).catch(console.error);
+        message.channel.send(`Проверка пройдена для ${message.author.username}: каналы открыты.`)
+          }
+      };
+
+});
+
+client.on("message", async message => {
   if(message.content === "z.res") {
     if(message.author.id === "339462715917729792") {
       let used = process.memoryUsage().rss / 1024 / 1024;
