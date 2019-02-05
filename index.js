@@ -67,7 +67,7 @@ client.on("message", async message => {
 });
 
 client.on("message", async message => {
-  let verify = message.guild.roles.find(role => role.name === "Verified");
+  let verify = message.guild.roles.find(role => role.name === "пользователь");
   let member = message.member;
   if(message.content === "z.verify") {
    if(message.type === "dm") return;
