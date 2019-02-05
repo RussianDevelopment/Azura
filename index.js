@@ -38,7 +38,7 @@ fs.readdir("./cmds/", (err, files) => {
 client.on("ready", async () => {
   console.log(`AZURA\n\nBot developers: Ripple & Fluiser\n\nServers: ${client.guilds.size}`);
   console.log(`Working.`);
-  client.user.setActivity("на булочки одноклассниц", {type: "WATCHING"});
+  client.user.setActivity("activity of 2 SHARDS", {type: "WATCHING"});
 });
 
 //
@@ -67,29 +67,14 @@ client.on("message", async message => {
 });
 
 client.on("message", async message => {
-  let verify = message.guild.roles.find(role => role.name === "пользователь");
+  let verify = message.guild.roles.find(role => role.name === "Verified");
   let member = message.member;
   if(message.content === "z.verify") {
    if(message.type === "dm") return;
-      if(message.member.roles.has(verify.id)) {
+      if(message.member.roles.has(verify.id).catch(console.error)) {
         message.channel.send(`Вы уже проходили проверку, ${message.author.username}: роль присутствует.`)
           } else {
             member.addRole(verify).catch(console.error);
-        message.channel.send(`Проверка пройдена для ${message.author.username}: каналы открыты.`)
-          }
-      };
-
-});
-
-client.on("message", async message => {
-  let dscrd = message.guild.roles.find(role => role.name === "discord.js");
-  let member = message.member;
-  if(message.content === "z.js") {
-   if(message.type === "dm") return;
-      if(message.member.roles.has(dscrd.id)) {
-        message.channel.send(`Вы уже проходили проверку, ${message.author.username}: роль присутствует.`)
-          } else {
-            member.addRole(dscrd).catch(console.error);
         message.channel.send(`Проверка пройдена для ${message.author.username}: каналы открыты.`)
           }
       };
@@ -113,7 +98,6 @@ client.on("message", async message => {
     message.delete(500).then(owner.send(`Сообщение от: ${message.author.tag} ${message.author.id}\n\nСодержание: Реклама`))
     message.author.send(`${message.author.username}, реклама запрещена.`)
   };
-<<<<<<< HEAD
 });
 
 client.on("message", async message => {
@@ -123,13 +107,8 @@ client.on("message", async message => {
     message.author.send(`${message.author.username}, реклама запрещена.`)
   };
 });
-client.on("message", async message => {
-  if(message.content.includes("discordapp.com")) {
-    let owner = client.users.get("339462715917729792");
-    message.delete(500).then(owner.send(`Сообщение от: ${message.author.tag} ${message.author.id}\n\nСодержание: Реклама`))
-    message.author.send(`${message.author.username}, реклама запрещена.`)
-  };
-});
+
+
 
 //
 //
