@@ -71,7 +71,7 @@ client.on("message", async message => {
   let member = message.member;
   if(message.content === "z.verify") {
    if(message.type === "dm") return;
-      if(message.member.roles.has(verify.id).catch(console.error)) {
+      if(message.member.roles.has(verify.id)) {
         message.channel.send(`Вы уже проходили проверку, ${message.author.username}: роль присутствует.`)
           } else {
             member.addRole(verify).catch(console.error);
