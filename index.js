@@ -108,7 +108,7 @@ client.on("message", (message) =>
       let embed = new Discord.RichEmbed()
       .setTitle("Azura's Body")
       .setColor("RANDOM")
-      .setImage(pr['URL'])
+      .setImage(pr['url'])
       .setTimestamp();
       porn.send(embed);
     });
