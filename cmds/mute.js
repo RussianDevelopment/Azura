@@ -10,7 +10,7 @@ module.exports.run = (client, message, args) =>
       if(message.member.roles.has(mute.id)) {
         message.channel.send(`Вы уже проходили проверку, ${message.author.username}: роль присутствует.`)
           } else {
-            member.addRole(mute).catch(console.error);
+            member.addRole(mute.id).catch(console.error);
         message.channel.send(`Проверка пройдена для ${message.author.username}: каналы открыты.`)
           }
      } else {
