@@ -116,7 +116,7 @@ client.on("message", (message) =>
   
   if(message.content === "z.pron automatic")
   {
-   let automatic = setInterval(function()
+   const automatic = setInterval(function()
    {
       request('https://nekos.life/api/v2/img/neko', function (error, response, body) {
      let pr = JSON.parse(body);
