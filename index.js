@@ -128,13 +128,6 @@ client.on("message", (message) =>
       porn.send(embed);
     });
    }, 15000);
-    
-     if(message.content === "z.pron clear")
-      {
-    clearInterval(automatic)
-      };  
-    });
-    
   };
   
  
