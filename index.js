@@ -88,7 +88,7 @@ client.on("message", async message => {
       const embed = new Discord.RichEmbed()
       .setTitle("Azura Statistic")
       .setColor("RANDOM")
-      .setDescription(`${Math.round(used * 100) / 100 МБ/ 500 МБ`)
+      .setDescription(`${Math.round(used * 100) / 100} МБ / 500 МБ`)
       .addField("Shards", "1");
       message.channel.send(embed);
       } else {
