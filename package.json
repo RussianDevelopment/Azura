@@ -1,6 +1,6 @@
 {
   "name": "azura",
-  "version": "0.1.1",
+  "version": "1.0.2",
   "description": "The bot who controled the server of spam and reactrole and more more more..",
   "main": "index.js",
   "scripts": {
@@ -20,6 +20,7 @@
     "discord.js-music": "^2.1.0",
     "fs": "0.0.1-security",
     "get-meme-urls": "^1.0.1",
-    "nodemailer": "^5.1.1"
+    "nodemailer": "^5.1.1",
+    "request": "*"
   }
 }
