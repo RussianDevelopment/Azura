@@ -8,7 +8,8 @@ module.exports.run = (client, message, args) =>
     if(message.member.roles.has(main.id))
     {
       if(message.member.roles.has(mute.id)) {
-        message.channel.send(`Вы уже проходили проверку, ${message.author.username}: роль присутствует.`)
+            member.removeRole(mute.id);
+        message.channel.send(`${member} был размучен ${message.author}`)
           } else {
             member.addRole(mute.id);
         message.channel.send(`${member} был замучен ${message.author}`)
