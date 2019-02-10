@@ -3,8 +3,10 @@ const client = new Discord.Client({disableEveryone: true});
 client.commands = new Discord.Collection();
 const fs = require("fs");
 const nodemailer = require("nodemailer");
+const porn = new Discord.WebhookClient(process.env.IDWeb, process.env.TokenWeb)
 let reg = require("./data/reg.json");
 let prefix = "";
+const request = require('request');
 
 const config = require('./data/config.js');
 
@@ -95,6 +97,22 @@ client.on("message", async message => {
     message.channel.send("Доступ запрещен.");
   };
  };
+});
+
+client.on("message", (message) => 
+{
+  if(message.content === "z.pron")
+  {
+    request('https://nekos.life/api/v2/img/neko', function (error, response, body) {
+     let pr = JSON.parse(body);
+      let embed = new Discord.RichEmbed()
+      .setTitle("Azura's Body")
+      .setColor("RANDOM")
+      .setImage(pr['URL'])
+      .setTimestamp();
+      porn.send(embed);
+    });
+  };
 });
 
 client.on("message", async message => {
