@@ -2,7 +2,7 @@ const Discord = require("discord.js")
 
 module.exports.run = (client, message, args) => 
 {
-  let role = message.guild.roles.find(role => role.name === "Main");
+  let main = message.guild.roles.find(role => role.name === "Main");
   let mute = message.guild.roles.find(role => role.name === "AzuraMute");
     let member = message.mentions.users.first()
     if(message.member.roles.has(main.id))
