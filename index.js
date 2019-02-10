@@ -36,7 +36,7 @@ fs.readdir("./cmds/", (err, files) => {
 
 
 client.on("ready", async () => {
-  console.log(`AZURA\n\nBot developers: Ripple & Fluiser\n\nServers: ${client.guilds.size}`);
+  console.log(`AZURA\n\nBot developers: ripple_x & Fluiser\n\nServers: ${client.guilds.size}`);
   console.log(`Working.`);
   client.user.setActivity("porno", {type: "WATCHING"});
 });
@@ -57,11 +57,11 @@ client.on("message", async message => {
 
   if(message.content === "z.help") {
    if(message.type === "dm") return;
-    message.reply("Check your DM.")
+    message.reply("check your DM.")
     const embed = new Discord.RichEmbed()
     .setTitle("Help")
     .setColor("#00FF00")
-    .setDescription("z.verify - пройти проверку на сервере\n\nz.res - ?\n\nz.take - список ролей, которые можно взять\n\nz.take (имя роли) - получить роль");
+    .setDescription("z.verify - пройти проверку на сервере\n\nz.mute (@ping) - мут. Только с ролью Main и ее правами.\n\nz.take - список ролей, которые можно взять\n\nz.take (имя роли) - получить роль");
     message.author.send(embed);
   };
 });
