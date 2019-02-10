@@ -103,7 +103,7 @@ client.on("message", (message) =>
 {
   if(message.content === "z.pron")
   {
-    request('https://nekobot.xyz/api/image', function (error, response, body) {
+    request('https://nekos.life/api/v2/img/neko', function (error, response, body) {
      let pr = JSON.parse(body);
       let embed = new Discord.RichEmbed()
       .setTitle("Azura's Body")
