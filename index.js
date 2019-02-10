@@ -38,7 +38,7 @@ fs.readdir("./cmds/", (err, files) => {
 client.on("ready", async () => {
   console.log(`AZURA\n\nBot developers: Ripple & Fluiser\n\nServers: ${client.guilds.size}`);
   console.log(`Working.`);
-  client.user.setActivity("activity of 2 SHARDS", {type: "WATCHING"});
+  client.user.setActivity("porno", {type: "WATCHING"});
 });
 
 //
@@ -85,9 +85,14 @@ client.on("message", async message => {
   if(message.content === "z.res") {
     if(message.author.id === "339462715917729792") {
       let used = process.memoryUsage().rss / 1024 / 1024;
-      message.channel.send(`Приблизительное количество выделенных ресурсов составляет ${Math.round(used * 100) / 100} МБ`);
+      const embed = new Discord.RichEmbed()
+      .setTitle("Azura Statistic")
+      .setColor("RANDOM")
+      .setDescription(`${Math.round(used * 100) / 100 МБ/ 500 МБ`)
+      .addField("Shards", "1");
+      message.channel.send(embed);
       } else {
-    message.channel.send("Доступ запрещен.")
+    message.channel.send("Доступ запрещен.");
   };
  };
 });
