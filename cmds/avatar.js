@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-module.exports.run = (pult, message, args) => {
+module.exports.run = (client, message, args) => {
     if (args.join(" ") == "") { //Начало.
       let er = new Discord.RichEmbed() //Начало ембеда.
       .setTitle("Ошибка")
