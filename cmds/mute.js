@@ -4,13 +4,13 @@ module.exports.run = (client, message, args) =>
 {
   let main = message.guild.roles.find(role => role.name === "Main");
   let mute = message.guild.roles.find(role => role.name === "AzuraMute");
-    let member = message.mentions.users.first()
+    let member = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(message.member.roles.has(main.id))
     {
       if(message.member.roles.has(mute.id)) {
         message.channel.send(`Вы уже проходили проверку, ${message.author.username}: роль присутствует.`)
           } else {
-            await(member.addRole(mute.id));
+            member.addRole(mute.id);
         message.channel.send(`Проверка пройдена для ${message.author.username}: каналы открыты.`)
           }
      } else {
