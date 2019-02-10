@@ -63,7 +63,7 @@ client.on("message", async message => {
     const embed = new Discord.RichEmbed()
     .setTitle("Help")
     .setColor("#00FF00")
-    .setDescription("z.verify - пройти проверку на сервере\n\nz.mute (@ping) - мут. Только с ролью Main и ее правами.\n\nz.take - список ролей, которые можно взять\n\nz.take (имя роли) - получить роль");
+    .setDescription("z.verify - пройти проверку на сервере\n\nz.mute (@ping) - мут. Только с ролью Main и ее правами\n\nz.pron - красивые картинки");
     message.author.send(embed);
   };
 });
@@ -103,7 +103,7 @@ client.on("message", (message) =>
 {
   if(message.content === "z.pron")
   {
-    request('https://nekos.life/api/v2/img/neko', function (error, response, body) {
+    request('https://nekobot.xyz/api/image', function (error, response, body) {
      let pr = JSON.parse(body);
       let embed = new Discord.RichEmbed()
       .setTitle("Azura's Body")
