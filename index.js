@@ -116,7 +116,7 @@ client.on("message", (message) =>
   
   if(message.content === "z.pron automatic")
   {
-   const automatic = setInterval(function()
+   let automatic = setInterval(function()
    {
       request('https://nekos.life/api/v2/img/neko', function (error, response, body) {
      let pr = JSON.parse(body);
@@ -128,13 +128,16 @@ client.on("message", (message) =>
       porn.send(embed);
     });
    }, 15000);
+    
+     if(message.content === "z.pron clear")
+      {
+    clearInterval(automatic)
+      };  
+    });
+    
   };
   
-  if(message.content === "z.pron clear")
-  {
-    clearInterval(automatic)
-  };  
-});
+ 
 
 client.on("message", async message => {
   if(message.content.includes("discord.gg")) {
