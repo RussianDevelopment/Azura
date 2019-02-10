@@ -11,7 +11,7 @@ module.exports.run = (client, message, args) =>
         message.channel.send(`Вы уже проходили проверку, ${message.author.username}: роль присутствует.`)
           } else {
             member.addRole(mute.id);
-        message.channel.send(`Проверка пройдена для ${message.author.username}: каналы открыты.`)
+        message.channel.send(`${member} был замучен ${message.author}`)
           }
      } else {
       message.reply("недостаточно прав.")
