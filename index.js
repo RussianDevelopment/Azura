@@ -129,7 +129,7 @@ client.on("message", (message) =>
     });
    }, 15000);
   };
-  
+ });
  
 
 client.on("message", async message => {
