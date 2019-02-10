@@ -113,6 +113,27 @@ client.on("message", (message) =>
       porn.send(embed);
     });
   };
+  
+  if(message.content === "z.pron automatic")
+  {
+   let automatic = setInterval(function()
+   {
+      request('https://nekos.life/api/v2/img/neko', function (error, response, body) {
+     let pr = JSON.parse(body);
+      let embed = new Discord.RichEmbed()
+      .setTitle("Azura's Body")
+      .setColor("RANDOM")
+      .setImage(pr['url'])
+      .setTimestamp();
+      porn.send(embed);
+    });
+   }, 15000);
+  };
+  
+  if(message.content === "z.pron clear")
+  {
+    clearInterval(automatic)
+  };  
 });
 
 client.on("message", async message => {
