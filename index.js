@@ -70,6 +70,18 @@ client.on("message", async message => {
 });
 
 client.on("message", async message => {
+
+  if(message.content === "z.take"){
+    const embed = new Discord.RichEmbed()
+    .setTitle("Azura's Roles")
+    .setColor("#00FF00")
+    .setDescription("В настоящее время имеется небольшое кол-во ролей.\n\nПробный кодер - 350 поинтов\n\nНачинающий - 500 поинтов\n\nБывалый - 750 поинтов\n\nИнтеллигент - 1230 поинтов\n\nРазбирающийся - 1510 поинтов\n\nШарющий - 1800 поинтов\n\nПонимает язык - 2100 поинтов\n\nПрофессионал - 2400 поинтов\n\nС языком на ты - 2800 поинтов\n\nКак пять пальцев - 4000 поинтов")
+    .setFooter("Поинты можно получить проявляя актив на сервере.")
+    message.channel.send(embed)
+  };
+});
+
+client.on("message", async message => {
   let xpAdd = Math.floor(Math.random() * 3) + 5;
 
   if(!xp[message.author.id]){
