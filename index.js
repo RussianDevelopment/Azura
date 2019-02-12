@@ -5,6 +5,7 @@ const fs = require("fs");
 const nodemailer = require("nodemailer");
 const porn = new Discord.WebhookClient(process.env.IDWeb, process.env.TokenWeb)
 let reg = require("./data/reg.json");
+let xp = require("./data/jsons/xp.json")
 let prefix = "";
 const request = require('request');
 
@@ -67,6 +68,44 @@ client.on("message", async message => {
     message.author.send(embed);
   };
 });
+
+client.on("message", async message => {
+  let xpAdd = Math.floor(Math.random() * 3) + 5;
+
+  if(!xp[message.author.id]){
+    xp[message.author.id] = {
+      xp: 0,
+      level: 1
+    };
+  }
+
+
+  let curxp = xp[message.author.id].xp;
+  let curlvl = xp[message.author.id].level;
+  let nxtLvl = xp[message.author.id].level * 1500;
+  xp[message.author.id].xp =  curxp + xpAdd;
+
+
+  if(message.content === "z.take Пробный кодер") {
+    if(curxp > 350){
+      let coder = message.guild.roles.find(role => role.name === "Пробный кодер");
+      let member = message.member;
+      if(message.member.roles.has(coder.id)) {
+        message.channel.send(`Вы уже получали роль, ${message.author.username}`)
+      } else {
+        member.addRole(coder).catch(console.err);
+        message.channel.send(`Роль "Пробный кодер" выдана пользователю ${message.author.username}`)
+      };
+    } else {
+      message.channel.send(`Недостаточно поинтов. Необходимо 350 поинтов. У вас ${curxp} поинтов`)
+    };
+  }
+
+  fs.writeFile("./data/jsons/xp.json", JSON.stringify(xp), (err) => {
+      if(err) console.log(err)
+      });
+});
+
 
 client.on("message", async message => {
   let verify = message.guild.roles.find(role => role.name === "пользователь");
