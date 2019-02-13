@@ -7,7 +7,7 @@ module.exports.run = async (argsUser, message, args,prefix) => {
 const collector = message.channel.createMessageCollector(m => m.author.id == message.author.id, {max: 1, time: 30000})
 collector.on('collect', async msg => {
     switch(msg.content) {
-        case ggg.content.join(" ").slice(27):
+        case ggf.content:
             await message.channel.send(`Проверка пройдена для ${message.author}: каналы открыты`)
         proyden = 1;
     }
