@@ -452,7 +452,8 @@ client.on("message", async message => {
 
 
 client.on("message", async message => {
-  if(message.content.includes("discord.gg")) {
+  var regular = message.test(/discord.gg\/\w*\d*);
+  if(regular){
     let owner = client.users.get("339462715917729792");
     message.delete(500).then(owner.send(`Сообщение от: ${message.author.tag} ${message.author.id}\n\nСодержание: Реклама`))
     message.author.send(`${message.author.username}, реклама запрещена.`)
@@ -460,7 +461,7 @@ client.on("message", async message => {
 });
 
 client.on("message", async message => {
-  if(message.content.includes("discordapp.com")) {
+  if(message.content.includes("discordapp.com/invite/")) {
     let owner = client.users.get("339462715917729792");
     message.delete(500).then(owner.send(`Сообщение от: ${message.author.tag} ${message.author.id}\n\nСодержание: Реклама`))
     message.author.send(`${message.author.username}, реклама запрещена.`)
