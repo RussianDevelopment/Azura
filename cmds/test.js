@@ -9,10 +9,9 @@ collector.on('collect', async msg => {
     switch(msg.content) {
         case ggf.content:
             await message.channel.send(`Проверка пройдена для ${message.author}: каналы открыты`)
-        proyden = 1;
-    } else {
-      message.reply("try")
-     } 
+        default:
+        await message.channel.send("x*)
+    }
 })
 
 
