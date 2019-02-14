@@ -451,20 +451,7 @@ client.on("message", async message => {
 });
 
 
-client.on("message", async message => {
-    let owner = client.users.get(message.guild.ownerID);
-let arr = [];
-  const inviteReg = /discord(app\.com\/invite|.\w{2})\/\w{5,}/gi
-message.guild.fetchInvites().then(invites => { 
-invites.forEach(invite => { 
-arr.push(invite.code); })
-let matches = message.content.match(inviteReg); 
-  if (matches) matches.forEach((match) => { if (!arr.includes(match.match(/discord(app\.com\/invite|.\w{2})\/\w{5,}/i)[3])) {
-if(message.author!==owner){ message.delete();
-owner.send(`Слушай. У вас тут пиарится хуй с ником ${message.author.tag} (${message.author.id})\n\nСодержит рекламу.`);
-message.author.send(`${message.author.username}, реклама запрещена.`)
- }                                                                                                                          
-}
+
                                            
 //
 //
