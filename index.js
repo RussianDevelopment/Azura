@@ -452,24 +452,20 @@ client.on("message", async message => {
 
 
 client.on("message", async message => {
-  var regular = message.test(/discord.gg\/\w*\d*);
-  if(regular){
-    let owner = client.users.get("339462715917729792");
-    message.delete(500).then(owner.send(`Сообщение от: ${message.author.tag} ${message.author.id}\n\nСодержание: Реклама`))
-    message.author.send(`${message.author.username}, реклама запрещена.`)
-  };
-});
-
-client.on("message", async message => {
-  if(message.content.includes("discordapp.com/invite/")) {
-    let owner = client.users.get("339462715917729792");
-    message.delete(500).then(owner.send(`Сообщение от: ${message.author.tag} ${message.author.id}\n\nСодержание: Реклама`))
-    message.author.send(`${message.author.username}, реклама запрещена.`)
-  };
-});
-
-
-
+    let owner = client.users.get(message.guild.ownerID);
+let arr = [];
+  const inviteReg = /discord(app\.com\/invite|.\w{2})\/\w{5,}/gi
+message.guild.fetchInvites().then(invites => { 
+invites.forEach(invite => { 
+arr.push(invite.code); })
+let matches = message.content.match(inviteReg); 
+  if (matches) matches.forEach((match) => { if (!arr.includes(match.match(/discord(app\.com\/invite|.\w{2})\/\w{5,}/i)[3])) {
+if(message.author!==owner){ message.delete();
+owner.send(`Слушай. У вас тут пиарится хуй с ником ${message.author.tag} (${message.author.id})\n\nСодержит рекламу.`);
+message.author.send(`${message.author.username}, реклама запрещена.`)
+ }                                                                                                                          
+}
+                                           
 //
 //
 //LOGIN
