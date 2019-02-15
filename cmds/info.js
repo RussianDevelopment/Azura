@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-module.exports.run = async (client, message, args) => {
+module.exports.run = (client, message, args) => {
 const addCommas = (int) => `\`${int.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}\``;
        const embed = new Discord.RichEmbed() 
         .setTitle(`Бот ${client.user.tag.slice(0, -5)}`)
