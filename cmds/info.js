@@ -6,7 +6,7 @@ const addCommas = (int) => `\`${int.toString().replace(/\B(?=(\d{3})+(?!\d))/g, 
         .setThumbnail(client.user.avatarURL)
         .addField(`Пинг API :ping_pong:`, `${addCommas(Math.round(client.ping))} ms`, true)
         .addField(`Пинг ${client.user.tag.slice(0, -5)}'ы :ping_pong:`, `${addCommas(Date.now() - message.createdTimestamp)}ms`, true)
-        .addField('ОЗУ :gear:', `${addCommas(Math.round(process.memoryUsage().rss / 1024 / 1024 ))}/\`1,024 МБ\``, true)
+        .addField('ОЗУ :gear:', `${addCommas(Math.round(process.memoryUsage().rss / 1024 / 1024 ))}/\`512 МБ\``, true)
         .addField(`Юзеры :bust_in_silhouette:`, `${addCommas(client.users.size)} users`, true)
         .addField(`Каналы :keyboard:`, `${addCommas(client.channels.size)} channels`, true)
         .addField(`Сервера :desktop:`, `${addCommas(client.guilds.size)} servers`, true)
