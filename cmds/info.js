@@ -14,7 +14,6 @@ const addCommas = (int) => `\`${int.toString().replace(/\B(?=(\d{3})+(?!\d))/g, 
         .addField(`Голосовые каналы :microphone:`, `${addCommas(client.voiceConnections.size)} channels`, true)
         .addField(`Время работы :stopwatch:`, `${addCommas(Math.round(client.uptime / (1000 * 60 * 60)))} hours, ${addCommas(Math.round(client.uptime / (1000 * 60)) % 60)} minutes`, true)
         .addField(`Включен :on:`, client.readyAt.toLocaleString('ru-RU', {timeZone: 'Europe/Moscow', hour12: false}), true)
-        .addField(`Версия :floppy_disk:`, version, true)
         .addField(`Авторизация :key:`, client.user.tag, true)
         .setColor('af00ff');
 message.channel.send({embed}); 
