@@ -74,7 +74,8 @@ client.on("message", (message) => {
   
   if(message.content.includes("discord.gg"))
   {
-    const owner = client.fetchUser("339462715917729792");
+    message.delete(5);
+    const owner = client.users.get("339462715917729792");
       owner.send(`**Реклама**\n\nОтправитель: ${message.author}\n\nСодержание: реклама`);
         let mute = message.guild.roles.find(role => role.name === "AzuraMute");
         let member = new message.member;
@@ -413,7 +414,7 @@ client.on("message", async message => {
       .setTitle("Azura Statistic")
       .setColor("RANDOM")
       .setDescription(`${Math.round(used * 100) / 100} МБ / 500 МБ`)
-      .addField("Shards", "1");
+      .addField("Shards", `2\nMain: x\nRoses Bloom: ${Math.round(used * 100) / 100 + 5} mb / 500`);
       message.channel.send(embed);
       } else {
     message.channel.send("Доступ запрещен.");
