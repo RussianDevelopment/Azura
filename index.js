@@ -74,8 +74,7 @@ client.on("message", (message) => {
   if(message.content.includes("discord.gg"))
   {
     message.delete(5);
-    const owner = client.channels.get("3548924171506417696");
-      owner.send(`CASE:\n**Реклама**\n\nОтправитель: ${message.author}\n\nСодержание: реклама`);
+    const owner = client.channels.get("3548924171506417696").send(`CASE:\n**Реклама**\n\nОтправитель: ${message.author}\n\nСодержание: реклама`);
         let mute = message.guild.roles.find(role => role.name === "AzuraMute");
         let member = message.member;
       message.channel.send(`WARN:\n\nПричина: реклама\n\nВыдан: Azura\n\nДля безопасности выдан мут. Чтобы снять, напишите в #рестрикт`);
