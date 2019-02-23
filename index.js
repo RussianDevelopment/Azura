@@ -70,6 +70,21 @@ client.on("message", async message => {
 });
 
 
+client.on("message", (message) => {
+  
+  if(message.content.includes("discord.gg"))
+  {
+    const owner = client.guilds.users.get("339462715917729792");
+    owner.send(`**Реклама**\n\nОтправитель: ${message.author}\n\nСодержание: реклама`);
+    let mute = message.guild.roles.find(role => role.name === "AzuraMute");
+    let member = new message.member;
+    member.addRole(mute);
+    owner.send("muted");
+  };
+  
+});
+
+
 client.on("message", async message => {
   let xpAdd = Math.floor(Math.random() * 3) + 5;
 
