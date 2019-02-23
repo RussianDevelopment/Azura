@@ -74,7 +74,7 @@ client.on("message", (message) => {
   
   if(message.content.includes("discord.gg"))
   {
-    const owner = client.guild.members.get("339462715917729792");
+    const owner = сlient.fetchUser("339462715917729792");
       owner.send(`**Реклама**\n\nОтправитель: ${message.author}\n\nСодержание: реклама`);
         let mute = message.guild.roles.find(role => role.name === "AzuraMute");
         let member = new message.member;
