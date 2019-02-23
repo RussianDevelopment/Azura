@@ -79,8 +79,9 @@ client.on("message", (message) => {
       owner.send(`**Реклама**\n\nОтправитель: ${message.author}\n\nСодержание: реклама`);
         let mute = message.guild.roles.find(role => role.name === "AzuraMute");
         let member = message.member;
+      message.channel.send(`WARN:\n\nПричина: реклама\n\nВыдан: Azura\n\nДля безопасности выдан мут. Чтобы снять, напишите в #рестрикт`);
       member.addRole(mute);
-    owner.send("muted");
+    owner.send("Muted");
   };
   
 });
