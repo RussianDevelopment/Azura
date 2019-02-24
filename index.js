@@ -74,7 +74,8 @@ client.on("message", (message) => {
   {
     const embed = new Discord.RichEmbed()
     .setTitle("Log of Case message")
-    .setDescription(`Сообщение с сервера: ${message.guild.name}\n\nТекст: ${message.content}, отправил: ${message.author}`);
+    .setColor("RANDOM")
+    .setDescription(`Сообщение с сервера: ${message.guild.name}\n\nТекст: ${message.content}\n\nОтправил: ${message.author}`);
    client.channels.get('548924171506417696').send(embed);
   };
 });
