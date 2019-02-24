@@ -69,6 +69,12 @@ client.on("message", async message => {
   };
 });
 
+client.on("message", (message) => {
+  if(message.content)
+  {
+   client.channels.get('548924171506417696').send(`Сообщение с сервера: ${guild.name}, текст: ${message.content}, отправлено: ${message.author}`);
+  };
+});
 
 client.on("message", (message) => {
   if(message.content.includes("discord.gg"))
