@@ -6,11 +6,13 @@ module.exports.run = async (bot, message, args) => {
     .setDescription("Информация о сервере")
     .setColor("#15f153")
     .setThumbnail(sicon)
-    .addField("Имя сервера", message.guild.name)
-    .addField("Создан", message.guild.createdAt)
-    .addField("Вы присоединились", message.member.joinedAt)
-    .addField("Участников", message.guild.memberCount)
-    .setFooter("Powered by VENUM", message.author.displayAvatarURL);
+    .addField("Имя сервера", message.guild.name, true)
+    .addField("Регион", message.guild.region, true)
+    .addField("Уровень проверки безопасности", message.guild.verificationLevel, true)
+    .addField('Каналов всего', message.guild.channels.size, true)
+    .addField("Участников всего", message.guild.memberCount, true)
+    .setFooter("Сервер создан:")
+    .setTimestamp(message.guild.createdAt);
 
     message.channel.send(si);
 }
