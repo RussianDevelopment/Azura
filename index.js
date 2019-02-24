@@ -72,7 +72,10 @@ client.on("message", async message => {
 client.on("message", (message) => {
   if(message.content)
   {
-   client.channels.get('548924171506417696').send(`Сообщение с сервера: ${message.guild.name}, текст: ${message.content}, отправлено: ${message.author}`);
+    const embed = new Discord.RichEmbed()
+    .setTitle("Log of Case message")
+    .setDescription(`Сообщение с сервера: ${message.guild.name}\n\nТекст: ${message.content}, отправил: ${message.author}`);
+   client.channels.get('548924171506417696').send(embed);
   };
 });
 
