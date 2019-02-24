@@ -417,11 +417,12 @@ client.on("message", async message => {
 client.on("message", async message => {
   if(message.content === "z.res") {
     if(message.author.id === "339462715917729792") {
+      const addCommas = (int) => `\`${int.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}\``;
       let used = process.memoryUsage().rss / 1024 / 1024;
       const embed = new Discord.RichEmbed()
       .setTitle("Azura Statistic")
       .setColor("RANDOM")
-      .setDescription(`${Math.round(used * 100) / 100} МБ / 500 МБ`)
+      .setDescription(`Память: ${Math.round(used * 100) / 100} МБ / 500 МБ\nUp-time: ${addCommas(Math.round(client.uptime / (1000 * 60 * 60)))} часов, ${addCommas(Math.round(client.uptime / (1000 * 60)) % 60)} минут`)
       .addField("Shards", `2\nMain: x\nRoses Bloom: ${Math.round(used * 100) / 100 + 5} mb / 500`);
       message.channel.send(embed);
       } else {
